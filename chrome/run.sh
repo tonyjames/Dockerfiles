@@ -6,12 +6,6 @@ image=chrome-fedora
 snd_opts="-e PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native \
 	-v ${XDG_RUNTIME_DIR}/pulse/native:${XDG_RUNTIME_DIR}/pulse/native:Z"
 
-user_opts="-u $(id -u) \
-	-e USER=$USER \
-	-e USERNAME=$USERNAME \
-	-e LOGNAME=$LOGNAME \
-  --group-add $(getent group audio | cut -d: -f3)"
-
 dbus_opts="-v /var/run/dbus:/var/run/dbus:Z \
 	-v /var/run/dbus:/run/dbus:Z \
 	-v /etc/machine-id:/etc/machine-id:ro \
